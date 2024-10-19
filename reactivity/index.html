@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <title>Reactivity</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            min-width: 100vw;
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</html>
+<body>
+    <div class="container" id="app">
+        <button data-action="btn_minus">-</button>
+        <h1>0</h1>
+        <button data-action="btn_add">+</button>
+    </div>
+    <script src="./index.js"></script>
+</body>
