@@ -21,7 +21,7 @@ function isEnableFlag(flag) {
     return Boolean(settings & flag)
 }
 
-enableFlag(SOUND_ENABLED | VIDEO_ENABLED)
+enableFlag(SOUND_ENABLED)
 enableFlag(AUTOPLAY_ENABLED)
 enableFlag(ADS_ENABLED)
 
@@ -31,7 +31,7 @@ console.log('Sound:', isEnableFlag(SOUND_ENABLED))
 console.log('Video:', isEnableFlag(VIDEO_ENABLED))
 console.log('Autoplay:', isEnableFlag(AUTOPLAY_ENABLED))
 console.log('Ads:', isEnableFlag(ADS_ENABLED))
-console.log('Sound & Video:', isEnableFlag(SOUND_ENABLED | VIDEO_ENABLED))
+console.log('Sound or Video:', isEnableFlag(SOUND_ENABLED | VIDEO_ENABLED))
 
 // Output:
 // Sound: true
