@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>CSS Shadow Experiments</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<header>
+    <div class="controls">
+        <div class="input-group">
+            <label for="shadowColor">Shadow</label>
+            <input type="color" id="shadowColor" />
+        </div>
+
+        <div class="input-group">
+            <label for="backgroundColor">Background</label>
+            <input type="color" id="backgroundColor" />
+        </div>
+
+        <div class="input-group">
+            <label for="blurRadius">Blur</label>
+            <input type="range" id="blurRadius" />
+        </div>
+
+        <div class="input-group">
+            <label for="spreadRadius">Spread</label>
+            <input type="range" id="spreadRadius" />
+        </div>
+
+        <div class="input-group">
+            <label for="inset">Inset</label>
+            <input type="checkbox" id="inset">
+        </div>
+    </div>
+</header>
+
+<main>
+    <div id="target">
+        <div id="joystick"></div>
+    </div>
+</main>
+
+<script src="script/index.js"></script>
+</body>
+</html>
