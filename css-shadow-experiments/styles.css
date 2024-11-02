@@ -1,4 +1,5 @@
 body {
+    margin: 0;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -22,7 +23,6 @@ header {
     padding: 10px;
 }
 
-
 .controls {
     display: flex;
     flex-direction: column;
@@ -39,6 +39,7 @@ header {
     align-items: center;
     width: 100%;
     gap: 10px;
+
     & label {
         font-size: 10px;
     }

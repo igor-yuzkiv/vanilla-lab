@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>CSS Shadow Experiments</title>
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <header>
@@ -23,17 +22,17 @@
 
         <div class="input-group">
             <label for="blurRadius">Blur</label>
-            <input type="range" id="blurRadius" />
+            <input type="range" id="blurRadius" min="0" max="100"/>
         </div>
 
         <div class="input-group">
             <label for="spreadRadius">Spread</label>
-            <input type="range" id="spreadRadius" />
+            <input type="range" id="spreadRadius" min="0" max="50"/>
         </div>
 
         <div class="input-group">
             <label for="inset">Inset</label>
-            <input type="checkbox" id="inset">
+            <input type="checkbox" id="inset"/>
         </div>
     </div>
 </header>
@@ -44,6 +43,6 @@
     </div>
 </main>
 
-<script src="script/index.js"></script>
+<script src="index.js"></script>
 </body>
 </html>
