@@ -69,9 +69,9 @@ let state = getDefaultShadowState()
 const target = document.getElementById('target')
 const joystick = new Joystick('#joystick', onJoystickMove)
 
-function onJoystickMove({ x, y }, boundary) {
-    state.offsetX = x - (boundary.x / 2)
-    state.offsetY = y - (boundary.y / 2)
+function onJoystickMove(position, boundary) {
+    state.offsetX = position.x - (boundary.x / 2)
+    state.offsetY = position.y - (boundary.y / 2)
     renderBoxShadow()
 }
 
