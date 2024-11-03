@@ -9,7 +9,7 @@
 }
 
 html {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     font-family: 'Courier New', Courier, monospace;
     box-sizing: border-box;
@@ -26,13 +26,53 @@ body {
 .container {
     display: grid;
     grid-template-rows: auto 1fr;
-    grid-template-areas: 'top top' 'lPanel rPanle';
-    grid-gap: 5px;
+    grid-template-areas: 'top top' 'lPanel rPanel';
     height: 100%;
+    padding-bottom: 5px;
 }
 
 .top-navigation {
     grid-area: top;
+
+    & .nav-list {
+        display: flex;
+        gap: 20px;
+        padding: 0 10px;
+        margin: 0;
+        list-style-type: none;
+        background-color: var(--green);
+        color: var(--black);
+    }
+}
+
+.panel {
+    position: relative;
+    border-width: var(--border-size);
+    border-color: var(--gray);
+    border-style: solid;
+    margin: 10px 5px 0 5px;
+    padding: 15px 5px 5px 5px;
+
+    &::before,
+    &::after {
+        background-color: var(--primary);
+        color: var(--gray);
+        padding: 0 5px;
+    }
+
+    &::before {
+        content: attr(data-breadcrumb);
+        position: absolute;
+        top: -10px;
+        left: 10px;
+    }
+
+    &::after {
+        content: '.[^]>';
+        position: absolute;
+        top: -10px;
+        right: 10px;
+    }
 }
 
 .panel:first-child {
@@ -40,16 +80,10 @@ body {
 }
 
 .panel:last-child {
-    grid-area: rPanle;
+    grid-area: rPanel;
 }
 
-.nav-list {
-    display: flex;
-    gap: 20px;
-    padding: 0 10px;
-    margin: 0;
-    list-style-type: none;
-    font-size: 20px;
-    background-color: var(--green);
+.panel-active::before {
+    background-color: var(--gray);
     color: var(--black);
 }
