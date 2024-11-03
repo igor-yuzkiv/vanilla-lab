@@ -4,7 +4,7 @@
     --primary: #3db6f9;
     --gray: #bdc3c7;
     --green: #16a085;
-    --gold: #fbcc7d;
+    --gold: #e0bc06;
     --border-size: 2px;
 }
 
@@ -25,10 +25,9 @@ body {
 
 .container {
     display: grid;
-    grid-template-rows: auto 1fr;
-    grid-template-areas: 'top top' 'lPanel rPanel';
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 'top top' 'lPanel rPanel' 'command command';
     height: 100%;
-    padding-bottom: 5px;
 }
 
 .top-navigation {
@@ -45,36 +44,6 @@ body {
     }
 }
 
-.panel {
-    position: relative;
-    border-width: var(--border-size);
-    border-color: var(--gray);
-    border-style: solid;
-    margin: 10px 5px 0 5px;
-    padding: 15px 5px 5px 5px;
-
-    &::before,
-    &::after {
-        background-color: var(--primary);
-        color: var(--gray);
-        padding: 0 5px;
-    }
-
-    &::before {
-        content: attr(data-breadcrumb);
-        position: absolute;
-        top: -10px;
-        left: 10px;
-    }
-
-    &::after {
-        content: '.[^]>';
-        position: absolute;
-        top: -10px;
-        right: 10px;
-    }
-}
-
 .panel:first-child {
     grid-area: lPanel;
 }
@@ -83,7 +52,95 @@ body {
     grid-area: rPanel;
 }
 
-.panel-active::before {
+.panel {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-width: var(--border-size);
+    border-color: var(--gray);
+    border-style: solid;
+    margin: 10px 5px 5px 5px;
+}
+
+.panel::before,
+.panel::after {
+    background-color: var(--primary);
+    color: var(--gray);
+    padding: 0 5px;
+}
+
+.panel::before {
+    content: attr(data-breadcrumb);
+    position: absolute;
+    top: -10px;
+    left: 10px;
+}
+
+.panel::after {
+    content: '.[^]>';
+    position: absolute;
+    top: -10px;
+    right: 10px;
+}
+
+.panel:focus::before {
     background-color: var(--gray);
     color: var(--black);
+}
+
+.panel-explorer {
+    flex: 1;
+    padding: 15px 5px 5px 5px;
+}
+.panel-explorer table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+    overflow: hidden;
+
+    & thead {
+        color: var(--gold);
+    }
+
+    & thead th:first-child {
+        width: 60%;
+    }
+
+    & td:nth-child(n + 2):not(:last-child),
+    th:nth-child(n + 2):not(:last-child) {
+        border-width: 0 var(--border-size);
+        border-color: var(--gray);
+        border-style: solid;
+    }
+    & td {
+        padding: 0 5px;
+    }
+}
+
+.panel-footer {
+    position: relative;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-top-width: var(--border-size);
+    border-top-color: var(--gray);
+    border-top-style: solid;
+    color: var(--gray);
+}
+
+.panel-footer::before {
+    content: '3,027 B in file';
+    position: absolute;
+    top: -12px;
+    background-color: var(--primary);
+    padding: 0px 10px;
+    color: var(--gold);
+}
+
+.command-line {
+    grid-area: command;
+    height: 100px;
+    background-color: var(--black);
 }
