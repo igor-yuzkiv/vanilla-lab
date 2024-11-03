@@ -139,7 +139,7 @@ body {
     position: absolute;
     top: -12px;
     background-color: var(--primary);
-    padding: 0px 10px;
+    padding: 0 10px;
     color: var(--gold);
 }
 
