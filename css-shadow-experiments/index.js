@@ -44,8 +44,9 @@ function reset() {
     document.getElementById('blurRadius').value = state.blurRadius
     document.getElementById('spreadRadius').value = state.spreadRadius
     document.getElementById('inset').checked = state.inset
+
+    renderBoxShadow()
 }
 
 reset()
-renderBoxShadow()
 document.addEventListener('change', onInputChange)
