@@ -1,107 +1,42 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>CSS Shadow Experiments</title>
-        <link rel="stylesheet" href="normalize.css" />
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body>
-        <main class="container">
-            <nav class="top-navigation">
-                <ul class="nav-list">
-                    <li>Files</li>
-                    <li>Command</li>
-                    <li>Etc</li>
-                </ul>
-            </nav>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>CSS Shadow Experiments</title>
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="container">
+    <nav class="top-navigation">
+        <ul class="nav-list">
+            <li>Files</li>
+            <li>Command</li>
+            <li>Etc</li>
+        </ul>
+    </nav>
 
-            <div class="panel" data-breadcrumb="< ~/Documents" tabindex="1">
-                <div class="panel-explorer">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th width="60%">Name</th>
-                                <th>Size</th>
-                                <th>Modify time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>/..</td>
-                                <td>UP--DIR</td>
-                                <td>Jan 12 16:00</td>
-                            </tr>
-                            <tr>
-                                <td>/Folder</td>
-                                <td>4096</td>
-                                <td>Jan 12 16:00</td>
-                            </tr>
-                            <tr>
-                                <td>/Folder</td>
-                                <td>4096</td>
-                                <td>Jan 12 16:00</td>
-                            </tr>
-                            <tr>
-                                <td>/Folder</td>
-                                <td>4096</td>
-                                <td>Jan 12 16:00</td>
-                            </tr>
-                            <tr>
-                                <td>file.txt</td>
-                                <td>4096</td>
-                                <td>Jan 12 16:00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="panel-footer"><span>Some File</span></div>
-            </div>
-            <div class="panel" data-breadcrumb="< ~/Documents" tabindex="2">
-                <div class="panel-explorer">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Size</th>
-                                <th>Modify time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>/..</td>
-                                <td>UP--DIR</td>
-                                <td>Jan 12 16:00</td>
-                            </tr>
-                            <tr>
-                                <td>/Folder</td>
-                                <td>4096</td>
-                                <td>Jan 12 16:00</td>
-                            </tr>
-                            <tr>
-                                <td>/Folder</td>
-                                <td>4096</td>
-                                <td>Jan 12 16:00</td>
-                            </tr>
-                            <tr>
-                                <td>/Folder</td>
-                                <td>4096</td>
-                                <td>Jan 12 16:00</td>
-                            </tr>
-                            <tr>
-                                <td>file.txt</td>
-                                <td>4096</td>
-                                <td>Jan 12 16:00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="panel-footer"><span>Some File</span></div>
-            </div>
-            <div class="command-line"></div>
-        </main>
-        <script src="index.js" type="module"></script>
-    </body>
+    <div class="command-line"></div>
+</main>
+
+<div id="templates">
+    <div class="panel-explorer">
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Size</th>
+                <th>Modify time</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="panel-footer"><span>Some File</span></div>
+</div>
+<script src="scripts/index.js" type="module"></script>
+</body>
 </html>
