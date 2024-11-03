@@ -106,8 +106,8 @@ body {
         width: 60%;
     }
 
-    & td:nth-child(n + 2):not(:last-child),
-    th:nth-child(n + 2):not(:last-child) {
+    & td:not(:first-child):not(:last-child),
+    th:not(:first-child):not(:last-child) {
         border-width: 0 var(--border-size);
         border-color: var(--gray);
         border-style: solid;
