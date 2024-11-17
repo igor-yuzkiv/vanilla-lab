@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>To Do List</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <main class="container">
+            <h1>Todo Lit</h1>
+            <form class="search-form" id="search-form">
+                <div class="search-input">
+                    <input name="search-query" type="search" list="search-completions" />
+                    <button class="btn-icon" data-action="onClickSearch">
+                        <svg width="20" height="20">
+                            <use href="icon.svg#search"></use>
+                        </svg>
+                    </button>
+                    <datalist id="search-completions"></datalist>
+                </div>
+                <div class="categories">
+                    <input hidden type="radio" name="category" id="work" />
+                    <label for="work">Робота</label>
+
+                    <input hidden type="radio" name="category" id="home" />
+                    <label for="home">Домашні справи</label>
+
+                    <input hidden type="radio" name="category" id="sport" />
+                    <label for="sport">Спорт</label>
+                </div>
+            </form>
+            <ul class="todo-list"></ul>
+        </main>
+
+        <ul id="template">
+            <li class="list-item">
+                <div class="tags"></div>
+                <div class="actions">
+                    <button class="btn-icon" data-action="editTodo">
+                        <svg width="20" height="20">
+                            <use href="icon.svg#edit"></use>
+                        </svg>
+                    </button>
+                    <button class="btn-icon" data-action="deleteTodo">
+                        <svg width="20" height="20">
+                            <use href="icon.svg#delete"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="content">
+                    <b class="subject">Lorem Ipsum</b>
+                    <p class="notes">Test Update Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+
+                <div class="buttons">
+                    <button class="btn-primary" data-action="completeTodo">
+                        <svg width="20" height="20">
+                            <use href="icon.svg#chack-circle"></use>
+                        </svg>
+                        Complete
+                    </button>
+                </div>
+            </li>
+        </ul>
+
+        <script src="./index.js"></script>
+    </body>
+</html>
