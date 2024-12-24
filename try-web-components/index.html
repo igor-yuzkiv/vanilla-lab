@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            color: white;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <custom-counter initial="-5" color="red">
+        <p slot="description">
+            This is a description slot
+        </p>
+    </custom-counter>
+</main>
+
+<script type="module" src="custom-counter.js"></script>
+<script type="module">
+    import { getRanHex } from './utils.js'
+
+    const counter = document.querySelector('custom-counter')
+    counter.addEventListener('counterChange', (event) => {
+        counter.textColor = `#${getRanHex(6)}`
+    })
+</script>
+</body>
+</html>
