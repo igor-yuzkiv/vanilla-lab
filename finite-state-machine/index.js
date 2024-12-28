@@ -11,12 +11,11 @@ const STATE = {
 
 const STATE_TRANSITION = {
     [STATE.waitingChoice]: async (context) => {
-        const answer = await select({
+        context.chosenItem = await select({
             message: 'Choose an item',
-            choices: ITEMS.map((item) => ({ name: `${item.name} - ${item.price}$`, value: item.name })),
+            choices: ITEMS.map((item) => ({ name: `${item.name} - ${item.price}$`, value: item })),
         })
 
-        context.chosenItem = ITEMS.find((item) => item.name === answer)
         context.state = STATE.waitingDeposit
 
         return context
