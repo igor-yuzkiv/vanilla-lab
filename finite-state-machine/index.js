@@ -17,7 +17,7 @@ const STATE_TRANSITION = {
         })
 
         context.chosenItem = ITEMS.find((item) => item.name === answer)
-        context.state = 'waitingDeposit'
+        context.state = STATE.waitingDeposit
 
         return context
     },
@@ -33,12 +33,12 @@ const STATE_TRANSITION = {
         })
 
         if (answer === null) {
-            context.state = context.deposit > 0 ? 'returningChange' : 'cancel'
+            context.state = context.deposit > 0 ? STATE.returningChange : STATE.cancel
         }
 
         context.deposit += answer
         if (context.deposit >= context.chosenItem.price) {
-            context.state = 'dispensing'
+            context.state = STATE.dispensing
         }
 
         return context
@@ -47,7 +47,7 @@ const STATE_TRANSITION = {
         console.log(`Dispensing ${context.chosenItem.name}. Enjoy!`)
 
         if (context.deposit > context.chosenItem.price) {
-            context.state = 'returningChange'
+            context.state = STATE.returningChange
             return context
         }
 
@@ -58,7 +58,7 @@ const STATE_TRANSITION = {
         return context.rest()
     },
     [STATE.cancel]: async (context) => {
-        console.log('Canceled')
+        console.log('Canceled!')
         return context.rest()
     },
 }
